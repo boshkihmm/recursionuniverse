@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.2 (alpha). Latest updates will be displayed soon. test
+	desc:Version 0.0.3 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 
@@ -71,21 +71,18 @@ Buttons
 	*buyup
 		name:Buy x10
 		on click:if (buyamount < 101) buyamount is buyamount*10
-		hidden
 	*buydown
 		name:Buy x0.1
 		on click:if (buyamount > 1) buyamount is buyamount*0.1
-		hidden
 
 Resources
  	*buyamount
 		start with:1
 		on load:this is 1
 		passive:multiply cost of :Buildings by this
-		hidden
 	*dust
 		name:Dust
-		desc:Cosmic dust can be used to make some of the biggest objects ever, however more and more dust is needed to make larger things.
+		desc:Cosmic dust can be used to make many different celestial objects, however more and more dust is needed to make larger things.
 		show earned
 		start with:25
 		on load:dust is 10
@@ -109,8 +106,7 @@ Buildings
 		on tick:yield 1 dust
 		cost:10 dust, 1 energy
 		desc:A small rocky body that slowly generates more dust.
-		on click:if (dust >= buyamount*5 and energy >= buyamount/2) this is this+(buyamount-1)
-		on buy:toast yes
+		on click:if (dust >= buyamount*10 and energy >= buyamount) this is this+(buyamount-1)
 	*planet
 		name:Planet
 		on tick:yield 1 asteroid
