@@ -110,6 +110,7 @@ Buildings
 		cost:10 dust, 1 energy
 		desc:A small rocky body that slowly generates more dust.
 		on click:if (dust >= buyamount*5 and energy >= buyamount/2) this is this+(buyamount-1)
+		on buy:toast yes
 	*planet
 		name:Planet
 		on tick:yield 1 asteroid
