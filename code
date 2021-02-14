@@ -1,9 +1,10 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.3 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.4 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
+//*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
 
 Settings
 	building cost increase:100%
@@ -88,7 +89,7 @@ Resources
 		on load:dust is 10
 	*energy
 		name:Energy
-		desc:Accretion energy is essential for making celestial bodies form from gravity power. This energy is often limited, and finding ways to speed up energy production is hard.
+		desc:Energy is essential for making celestial bodies form from gravity power. This energy is often limited, and finding ways to speed up energy production is hard.
 	*exotic
 		name:Exotic Matter
 		desc:Exotic matter obtained from converting normal matter is extremely valuable, boosting your dust earn by an additive 1%. It can also be used to activate special boosts. Dust mass is currently being boosted by x[1+(0.01*this)].
