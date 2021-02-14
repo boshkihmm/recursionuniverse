@@ -1,9 +1,9 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.1 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.2 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
-	updated:1/6/2020
+	updated:2/13/2020
 
 Settings
 	building cost increase:100%
@@ -49,6 +49,7 @@ Buttons
 			yield pow(dust,0.4) exotic
 			lose :Buildings
 			lose :Upgrades:notTag:essentials
+			dust is 0
 			energy is 0
 			:tag:cooldowns is 0
 		end
