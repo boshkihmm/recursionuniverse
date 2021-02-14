@@ -44,12 +44,11 @@ Layout
 Buttons
 	*wormhole
 		name:Wormhole
-		desc:Open up a wormhole to convert all of the matter and dust you have into exotic matter. This will destroy all dust and objects you have, and will use all of your energy.<//><b>Activating a wormhole will give you [pow(dust,0.4)/1000] exotic matter.<b>
+		desc:Open up a wormhole to convert all of the matter and dust you have into exotic matter. This will destroy all dust and objects you have, and will use all of your energy.<//><b>Activating a wormhole will give you [pow(dust,0.4)] exotic matter.<b>
 		on click:
-			yield pow(dust,0.4)/1000 exotic
+			yield pow(dust,0.4) exotic
 			lose :Buildings
 			lose :Upgrades:notTag:essentials
-			dust is 10*(pow(exotic,2)+1)
 			energy is 0
 			:tag:cooldowns is 0
 		end
@@ -68,19 +67,6 @@ Buttons
 			end
 		end
 		passive:if (convertcooldown > 0) 
-	*matterbutton
-		name:Matter Rush
-		desc:Activate 5% of your exotic matter, and use it to temporarily amplify the power of your dust production, multiplying dust earned by 10 for 30 seconds. This ability has a 30 minute cooldown, and needs [mattercooldown] seconds until it can be used again.
-		tag:abilities
-		on click:
-			if (mattercooldown = 0)
-				lose exotic/20 exotic
-				mattercooldown is 1800
-				matterbuff is 30
-			else
-				toast Your cooldown needs to be at 0!
-			end
-		end
 	*buyup
 		name:Buy x10
 		on click:if (buyamount < 101) buyamount is buyamount*10
@@ -91,14 +77,6 @@ Buttons
 		hidden
 
 Resources
-	*test
-		passive:
-			if (dust >= buyamount*10 and energy >= buyamount)
-				this is 100
-			else
-				this is 0
-			end
-		end
  	*buyamount
 		start with:1
 		on load:this is 1
@@ -181,11 +159,6 @@ Buildings
 		desc:you've gotta be kidding me
 
 Upgrades
-	*devconfirmed
-		name:WHAT ARE YOU DOING
-		desc:omg you're a dev!?!?!?!?!?!?!?!?!?
-		tag:essentials
-		hidden
 	*generator1
 		name:Tiny Generator
 		desc:A tiny energy generator produces 1 energy per second.
@@ -218,168 +191,3 @@ Upgrades
 		tag:generators
 
 Achievements
-	*TEMPLATE
-		desc:The increased asteroid density groups increases your asteroids' size slightly, allowing them to produce 50% more dust.
-		passive:multiply dust yield of asteroid by 1.5
-	*asteroidup1
-		name:Bigger Asteroids (1)
-		req:asteroid >= 1e3
-	*asteroidup2
-		name:Bigger Asteroids (2)
-		req:asteroid >= 1e6
-	*asteroidup3
-		name:Bigger Asteroids (3)
-		req:asteroid >= 1e9
-	*asteroidup4
-		name:Bigger Asteroids (4)
-		req:asteroid >= 1e12
-	*asteroidup5
-		name:Bigger Asteroids (5)
-		req:asteroid >= 1e15
-	*asteroidup6
-		name:Bigger Asteroids (6)
-		req:asteroid >= 1e18
-	*asteroidup7
-		name:Bigger Asteroids (7)
-		req:asteroid >= 1e21
-	*asteroidup8
-		name:Bigger Asteroids (8)
-		req:asteroid >= 1e24
-	*asteroidup9
-		name:Bigger Asteroids (9)
-		req:asteroid >= 1e27
-	*asteroidup10
-		name:Bigger Asteroids (10)
-		req:asteroid >= 1e30
-	*TEMPLATE
-		desc:The grouping of your planets forms a stronger overall gravity. It increases your planets' gravity pull slightly, allowing them to attract 50% more asteroids.
-		passive:multiply asteroid yield of planet by 1.5
-	*planetup1
-		name:Group Gravitation (1)
-		req:planet >= 1e3
-	*planetup2
-		name:Group Gravitation (2)
-		req:planet >= 1e6
-	*planetup3
-		name:Group Gravitation (3)
-		req:planet >= 1e9
-	*planetup4
-		name:Group Gravitation (4)
-		req:planet >= 1e12
-	*planetup5
-		name:Group Gravitation (5)
-		req:planet >= 1e15
-	*planetup6
-		name:Group Gravitation (6)
-		req:planet >= 1e18
-	*planetup7
-		name:Group Gravitation (7)
-		req:planet >= 1e21
-	*planetup8
-		name:Group Gravitation (8)
-		req:planet >= 1e24
-	*planetup9
-		name:Group Gravitation (9)
-		req:planet >= 1e27
-	*planetup10
-		name:Group Gravitation (10)
-		req:planet >= 1e30
-	*TEMPLATE
-		desc:The high temperature of your stars grouped together helps heat up young planets. Your stars produce 50% more planets.
-		passive:multiply planet yield of star by 1.5
-	*starup1
-		name:Hotter Stars (1)
-		req:star >= 1e3
-	*starup2
-		name:Hotter Stars (2)
-		req:star >= 1e6
-	*starup3
-		name:Hotter Stars (3)
-		req:star >= 1e9
-	*starup4
-		name:Hotter Stars (4)
-		req:star >= 1e12
-	*starup5
-		name:Hotter Stars (5)
-		req:star >= 1e15
-	*starup6
-		name:Hotter Stars (6)
-		req:star >= 1e18
-	*starup7
-		name:Hotter Stars (7)
-		req:star >= 1e21
-	*starup8
-		name:Hotter Stars (8)
-		req:star >= 1e24
-	*starup9
-		name:Hotter Stars (9)
-		req:star >= 1e27
-	*starup10
-		name:Hotter Stars (10)
-		req:star >= 1e30
-	*TEMPLATE
-		desc:Your nebulae merge into bigger and denser clumps of dust and gas, improving your star creation rate by 50%.
-		passive:multiply star yield of nebula by 1.5
-	*nebulaup1
-		name:Denser Nebulae (1)
-		req:nebula >= 1e3
-	*nebulaup2
-		name:Denser Nebulae (2)
-		req:nebula >= 1e6
-	*nebulaup3
-		name:Denser Nebulae (3)
-		req:nebula >= 1e9
-	*nebulaup4
-		name:Denser Nebulae (4)
-		req:nebula >= 1e12
-	*nebulaup5
-		name:Denser Nebulae (5)
-		req:nebula >= 1e15
-	*nebulaup6
-		name:Denser Nebulae (6)
-		req:nebula >= 1e18
-	*nebulaup7
-		name:Denser Nebulae (7)
-		req:nebula >= 1e21
-	*nebulaup8
-		name:Denser Nebulae (8)
-		req:nebula >= 1e24
-	*nebulaup9
-		name:Denser Nebulae (9)
-		req:nebula >= 1e27
-	*nebulaup10
-		name:Denser Nebulae (10)
-		req:nebula >= 1e30
-	*TEMPLATE
-		desc:The brightness of all of your galaxies gleams in the midst of space, allowing you to see more nebulae in the distance. 50% more nebulae are produced.
-		passive:multiply nebula yield of galaxy by 1.5
-	*galaxyup1
-		name:Gleaming Galaxies (1)
-		req:galaxy >= 1e3
-	*galaxyup2
-		name:Gleaming Galaxies (2)
-		req:galaxy >= 1e6
-	*galaxyup3
-		name:Gleaming Galaxies (3)
-		req:galaxy >= 1e9
-	*galaxyup4
-		name:Gleaming Galaxies (4)
-		req:galaxy >= 1e12
-	*galaxyup5
-		name:Gleaming Galaxies (5)
-		req:galaxy >= 1e15
-	*galaxyup6
-		name:Gleaming Galaxies (6)
-		req:galaxy >= 1e18
-	*galaxyup7
-		name:Gleaming Galaxies (7)
-		req:galaxy >= 1e21
-	*galaxyup8
-		name:Gleaming Galaxies (8)
-		req:galaxy >= 1e24
-	*galaxyup9
-		name:Gleaming Galaxies (9)
-		req:galaxy >= 1e27
-	*galaxyup10
-		name:Gleaming Galaxies (10)
-		req:galaxy >= 1e30
