@@ -92,12 +92,8 @@ Resources
 		desc:Accretion energy is essential for making celestial bodies form from gravity power. This energy is often limited, and finding ways to speed up energy production is hard.
 	*exotic
 		name:Exotic Matter
-		desc:Exotic matter obtained from converting normal matter is extremely valuable. Its abnormal properties boost the mass of your dust by simply coexisting with it. It can also be used to activate special boosts. Dust mass is currently being boosted by x[1+(0.25*this)].
-		passive:multiply yield of dust by 1+(0.25*this)
-	*matterbuff
-		on tick:lose this
-		passive:if (this > 0) multiply yield of dust by 10
-
+		desc:Exotic matter obtained from converting normal matter is extremely valuable, boosting your dust earn by an additive 1%. It can also be used to activate special boosts. Dust mass is currently being boosted by x[1+(0.01*this)].
+		passive:multiply yield of dust by 1+(0.01*this)
 	*TEMPLATE
 		on tick:lose this
 		hidden
@@ -151,12 +147,12 @@ Buildings
 		name:Universe
 		on tick:yield 1 filament
 		cost:1e55 dust, 9 energy
-		desc:The enormous realms that contain everything that is known to exist. Nothing can exist outside of these, and surely nothing is bigger than them.
+		desc:The enormous realms that contain every well-known celestial body.
 	*multiverse
 		name:Multiverse
 		on tick:yield 1 universe
 		cost:1e70 dust, 10 energy
-		desc:you've gotta be kidding me
+		desc:A pocket of space that holds many, many universes.
 
 Upgrades
 	*generator1
