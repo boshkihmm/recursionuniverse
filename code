@@ -49,7 +49,7 @@ Buttons
 			yield pow(dust,0.4) exotic
 			lose :Buildings
 			lose :Upgrades:notTag:essentials
-			dust is 0
+			dust is 25
 			energy is 0
 			:tag:cooldowns is 0
 		end
@@ -87,7 +87,8 @@ Resources
 		name:Dust
 		desc:Cosmic dust can be used to make some of the biggest objects ever, however more and more dust is needed to make larger things.
 		show earned
-		start with:10
+		start with:25
+		on load:dust is 10
 	*energy
 		name:Energy
 		desc:Accretion energy is essential for making celestial bodies form from gravity power. This energy is often limited, and finding ways to speed up energy production is hard.
