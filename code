@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.5 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.6 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -22,7 +22,7 @@ Layout
 	*store
 		contains:buildings, upgrades
 	*buildings
-		contains:BulkDisplay, Buildings
+		contains:objects
 		header:Objects
 		tooltip origin:left
 	*upgrades
@@ -41,7 +41,7 @@ Layout
 		contains:tag:exoticupgrades
 		in:upgrades
 		header:Exotic Upgrades
-
+		
 Buttons
 	*wormhole
 		name:Wormhole
@@ -75,6 +75,17 @@ Buttons
 	*buydown
 		name:Buy x0.1
 		on click:if (buyamount > 1) buyamount is buyamount*0.1
+	*TEMPLATE
+		tag:objectbutton
+	*asteroidbutton
+		name:Create Asteroid (10 dust, 1 energy)
+		on click:
+			if (dust >= 10 and energy >= 1)
+				yield 1 asteroid
+				lose 10 dust
+				lose 1 energy
+			end
+		end
 
 Resources
  	*buyamount
@@ -95,6 +106,12 @@ Resources
 		desc:Exotic matter obtained from converting normal matter is extremely valuable, boosting your dust earn by an additive 1%. It can also be used to activate special boosts. Dust mass is currently being boosted by x[1+(0.01*this)].
 		passive:multiply yield of dust by 1+(0.01*this)
 	*TEMPLATE
+		tag:object
+	*asteroid
+		name:Asteroid
+		desc:A small rocky body that slowly generates more dust.
+		on tick:yield this dust
+	*TEMPLATE
 		on tick:lose this
 		hidden
 		tag:cooldowns
@@ -102,12 +119,6 @@ Resources
 	*mattercooldown
 
 Buildings
-	*asteroid
-		name:Asteroid
-		on tick:yield 1 dust
-		cost:10 dust, 1 energy
-		desc:A small rocky body that slowly generates more dust.
-		on click:if (dust >= buyamount*5 and energy >= buyamount/2) this is this+(buyamount-1)
 	*planet
 		name:Planet
 		on tick:yield 1 asteroid
