@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.12 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.13 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -80,10 +80,10 @@ Buttons
 	*asteroidbutton
 		name:Create Asteroid (10 dust, 1 energy)
 		on click:
-			if (dust >= 10 and energy >= 1)
-				yield 1 asteroid
-				lose 10 dust
-				lose 1 energy
+			if (dust >= 10*buyamount and energy >= buyamount)
+				yield buyamount asteroid
+				lose 10*buyamount dust
+				lose 1*buyamount energy
 			end
 		end
 	*planetbutton
