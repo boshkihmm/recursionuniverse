@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.16 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.17 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -26,8 +26,8 @@ Layout
 	*buttons
 		contains:Buttons
 	*store
-		contains:objects, upgrades
-	*objects
+		contains:buildings, upgrades
+	*buildings
 		contains:tag:object, tag:objectbutton
 		header:Objects
 		tooltip origin:left
