@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.18 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.20 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -81,11 +81,14 @@ Buttons
 	*buydown
 		name:Buy x0.1
 		on click:if (buyamount > 1) buyamount is buyamount*0.1
+
+
+
 	*TEMPLATE
 		tag:objectbutton
 		class:objectbox
 	*asteroidbutton
-		name:Create Asteroid ([10*buyamount] dust, [buyamount= energy)
+		name:text:Create Asteroid ([10*buyamount] dust, 1 energy)
 		on click:
 			if (dust >= 10*buyamount and energy >= buyamount)
 				yield buyamount asteroid
@@ -94,7 +97,7 @@ Buttons
 			end
 		end
 	*planetbutton
-		name:Create Planet ([1000*buyamount] dust, [2*buyamount] energy)
+		name:Create Planet (1000 dust, 2 energy)
 		on click:
 			if (dust >= 1000*buyamount and energy >= 2*buyamount)
 				yield buyamount planet
@@ -103,15 +106,33 @@ Buttons
 			end
 		end
 	*starbutton
-		name:Create Star (1e6 dust, 3 energy)
+		name:Create Star (1 million dust, 3 energy)
 		on click:
-			if (dust >= 1e6 and energy >= 3)
-				yield 1 star
-				lose 1e6 dust
-				lose 3 energy
+			if (dust >= 1e6*buyamount and energy >= 3*buyamount)
+				yield buyamount star
+				lose 1e6*buyamount dust
+				lose 3*buyamount energy
 			end
 		end
-
+	*nebulabutton
+		name:Create Nebula (10 billion dust, 4 energy)
+		on click:
+			if (dust >= 1e10*buyamount and energy >= 4*buyamount)
+				yield buyamount nebula
+				lose 1e10*buyamount dust
+				lose 4*buyamount energy
+			end
+		end
+	*galaxybutton
+		name:Create Galaxy (10 billion dust, 5 energy)
+		on click:
+			if (dust >= 1e15*buyamount and energy >= 5*buyamount)
+				yield buyamount galaxy
+				lose 1e15*buyamount dust
+				lose 5*buyamount energy
+			end
+		end
+		
 Resources
  	*buyamount
 		start with:1
@@ -145,6 +166,14 @@ Resources
 		name:Star
 		on tick:yield this planet
 		desc:A hot, gas-filled body that has a gravity strong enough to attract planets big and small.
+	*nebula
+		name:Nebula
+		on tick:yield this star
+		desc:A large cloud of gas and dust, serving as a nursery for stars and star systems.
+	*galaxy
+		name:Galaxy
+		on tick:yield this nebula
+		desc:A huge formation of thousands and thousands of nebulae and stars.
 	*TEMPLATE
 		on tick:lose this
 		hidden
@@ -153,16 +182,6 @@ Resources
 	*mattercooldown
 
 Buildings
-	*nebula
-		name:Nebula
-		on tick:yield 1 star
-		cost:1e10 dust, 4 energy
-		desc:A large cloud of gas and dust, serving as a nursery for stars and star systems.
-	*galaxy
-		name:Galaxy
-		on tick:yield 1 nebula
-		cost:1e15 dust, 5 energy
-		desc:A huge formation of thousands and thousands of nebulae and stars.
 	*cluster
 		name:Cluster
 		on tick:yield 1 galaxy
