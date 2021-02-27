@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.31 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.32 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -147,7 +147,6 @@ Resources
 		desc:Cosmic dust can be used to make many different celestial objects, however more and more dust is needed to make larger things.
 		show earned
 		start with:25
-		on load:dust is 10
 	*energy
 		name:Energy
 		desc:Energy is essential for making celestial bodies form from gravity power. This energy is often limited, and finding ways to speed up energy production is hard.
