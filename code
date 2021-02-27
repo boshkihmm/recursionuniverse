@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.23 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.24 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -89,7 +89,7 @@ Buttons
 		class:objectbox
 	*asteroidbutton
 		name:Create Asteroid
-		text:Create Asteroid ([10*buyamount dust], [buyamount energy])
+		text:Create Asteroid ([10*buyamount] dust, [buyamount] energy)
 		on click:
 			if (dust >= 10*buyamount and energy >= buyamount)
 				yield buyamount asteroid
@@ -99,7 +99,7 @@ Buttons
 		end
 	*planetbutton
 		name:Create Planet (1000 dust, 2 energy)
-		text:Create Planet ([1000*buyamount dust], [2*buyamount energy])
+		text:Create Planet ([1000*buyamount] dust, [2*buyamount] energy)
 		on click:
 			if (dust >= 1000*buyamount and energy >= 2*buyamount)
 				yield buyamount planet
@@ -109,7 +109,7 @@ Buttons
 		end
 	*starbutton
 		name:Create Star (1 million dust, 3 energy)
-		text:Create Star ([1e6*buyamount dust], [3*buyamount energy])
+		text:Create Star ([1e6*buyamount] dust, [3*buyamount] energy)
 		on click:
 			if (dust >= 1e6*buyamount and energy >= 3*buyamount)
 				yield buyamount star
@@ -119,7 +119,7 @@ Buttons
 		end
 	*nebulabutton
 		name:Create Nebula (10 billion dust, 4 energy)
-		text:Create Nebula ([1e10*buyamount dust], [4*buyamount energy])
+		text:Create Nebula ([1e10*buyamount] dust, [4*buyamount] energy)
 		on click:
 			if (dust >= 1e10*buyamount and energy >= 4*buyamount)
 				yield buyamount nebula
@@ -129,7 +129,7 @@ Buttons
 		end
 	*galaxybutton
 		name:Create Galaxy (1 quadrillion dust, 5 energy)
-		text:Create Galaxy ([1e15*buyamount dust], [5*buyamount energy])
+		text:Create Galaxy ([1e15*buyamount] dust, [5*buyamount] energy)
 		on click:
 			if (dust >= 1e15*buyamount and energy >= 5*buyamount)
 				yield buyamount galaxy
