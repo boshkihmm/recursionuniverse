@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.29 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.30 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -60,9 +60,6 @@ Buttons
 			energy is 0
 			:tag:cooldowns is 0
 		end
-		req:have generator4
-		passive:if (dust >= 1e6) show this else hide this
-		hidden
 	*convertbutton
 		name:Convert Energy
 		desc:Activate 10% of your exotic matter, and convert it into energy. This ability has a 1 hour cooldown, and needs [convertcooldown] seconds until it can be used again. Converting right now will give you [pow((exotic/10),0.15)*1000] energy.
