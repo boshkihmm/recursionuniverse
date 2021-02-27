@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.24 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.25 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -54,7 +54,7 @@ Buttons
 		desc:Open up a wormhole to convert all of the matter and dust you have into exotic matter. This will destroy all dust and objects you have, and will use all of your energy.<//><b>Activating a wormhole will give you [pow(dust,0.4)] exotic matter.<b>
 		on click:
 			yield pow(dust,0.4) exotic
-			lose :Buildings
+			lose tag:objects
 			lose :Upgrades:notTag:essentials
 			dust is 25
 			energy is 0
@@ -163,22 +163,27 @@ Resources
 		name:Asteroid
 		desc:A small rocky body that slowly generates more dust.
 		on tick:yield this dust
+		tag:object
 	*planet
 		name:Planet
 		on tick:yield this asteroid
 		desc:A large rocky body that attracts asteroids with its gravity force.
+		tag:object
 	*star
 		name:Star
 		on tick:yield this planet
 		desc:A hot, gas-filled body that has a gravity strong enough to attract planets big and small.
+		tag:object
 	*nebula
 		name:Nebula
 		on tick:yield this star
 		desc:A large cloud of gas and dust, serving as a nursery for stars and star systems.
+		tag:object
 	*galaxy
 		name:Galaxy
 		on tick:yield this nebula
 		desc:A huge formation of thousands and thousands of nebulae and stars.
+		tag:object
 	*TEMPLATE
 		on tick:lose this
 		hidden
