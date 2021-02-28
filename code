@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.33 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.34. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -86,6 +86,7 @@ Buttons
 	*TEMPLATE
 		tag:objectbutton
 		class:objectbox
+		no tooltip
 	*asteroidbutton
 		name:Create Asteroid
 		text:Create Asteroid ([10*buyamount] dust, [buyamount] energy)
@@ -146,6 +147,46 @@ Buttons
 				lose 6*buyamount energy
 			end
 		end
+	*superclusterbutton
+		name:Create Supercluster
+		text:Create Supercluster ([1e31*buyamount] dust, [7*buyamount] energy)
+		on click:
+			if (dust >= 1e31*buyamount and energy >= 7*buyamount)
+				yield buyamount supercluster
+				lose 1e31*buyamount dust
+				lose 7*buyamount energy
+			end
+		end
+	*filamentbutton
+		name:Create Filament
+		text:Create Filament ([1e42*buyamount] dust, [8*buyamount] energy)
+		on click:
+			if (dust >= 1e42*buyamount and energy >= 8*buyamount)
+				yield buyamount filament
+				lose 1e42*buyamount dust
+				lose 8*buyamount energy
+			end
+		end
+	*universebutton
+		name:Create Universe
+		text:Create Universe ([1e55*buyamount] dust, [9*buyamount] energy)
+		on click:
+			if (dust >= 1e55*buyamount and energy >= 9*buyamount)
+				yield buyamount universe
+				lose 1e55*buyamount dust
+				lose 9*buyamount energy
+			end
+		end
+	*multiversebutton
+		name:Create Multiverse
+		text:Create Multiverse ([1e70*buyamount] dust, [10*buyamount] energy)
+		on click:
+			if (dust >= 1e70*buyamount and energy >= 10*buyamount)
+				yield buyamount multiverse
+				lose 1e70*buyamount dust
+				lose 10*buyamount energy
+			end
+		end
 		
 Resources
  	*buyamount
@@ -197,6 +238,25 @@ Resources
 		on tick:yield this galaxy
 		desc:A galaxy cluster gathers groups of galaxies and nebulae, eventually forming more material.
 		tag:object
+	*supercluster
+		name:Supercluster
+		on tick:yield this cluster
+		desc:A supercluster is a small web in the universe made of countless clusters.
+		tag:object
+	*filament
+		name:Filament
+		on tick:yield this supercluster
+		desc:Galaxy filaments are some of the largest structures, the biggest ones being billions of light years wide.
+		tag:object
+	*universe
+		name:Universe
+		on tick:yield this filament
+		desc:The enormous realms that contain every well-known celestial body.
+		tag:object
+	*multiverse
+		name:Multiverse
+		on tick:yield this universe
+		desc:A pocket of space that holds many, many universes.
 	*TEMPLATE
 		on tick:lose this
 		hidden
@@ -205,21 +265,6 @@ Resources
 	*mattercooldown
 
 Buildings
-	*supercluster
-		name:Supercluster
-		on tick:yield 1 cluster
-		cost:1e31 dust, 7 energy
-		desc:A supercluster is a small web in the universe made of countless clusters.
-	*filament
-		name:Filament
-		on tick:yield 1 supercluster
-		cost:1e42 dust, 8 energy
-		desc:Galaxy filaments are the largest structures in the universe, the biggest ones being billions of light years wide.  
-	*universe
-		name:Universe
-		on tick:yield 1 filament
-		cost:1e55 dust, 9 energy
-		desc:The enormous realms that contain every well-known celestial body.
 	*multiverse
 		name:Multiverse
 		on tick:yield 1 universe
