@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.34. Latest updates will be displayed soon.
+	desc:Version 0.0.35. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -263,13 +263,6 @@ Resources
 		tag:cooldowns
 	*convertcooldown
 	*mattercooldown
-
-Buildings
-	*multiverse
-		name:Multiverse
-		on tick:yield 1 universe
-		cost:1e70 dust, 10 energy
-		desc:A pocket of space that holds many, many universes.
 
 Upgrades
 	*generator1
