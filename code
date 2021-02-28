@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.32 (alpha). Latest updates will be displayed soon.
+	desc:Version 0.0.33 (alpha). Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
@@ -97,7 +97,7 @@ Buttons
 			end
 		end
 	*planetbutton
-		name:Create Planet (1000 dust, 2 energy)
+		name:Create Planet
 		text:Create Planet ([1000*buyamount] dust, [2*buyamount] energy)
 		on click:
 			if (dust >= 1000*buyamount and energy >= 2*buyamount)
@@ -107,7 +107,7 @@ Buttons
 			end
 		end
 	*starbutton
-		name:Create Star (1 million dust, 3 energy)
+		name:Create Star
 		text:Create Star ([1e6*buyamount] dust, [3*buyamount] energy)
 		on click:
 			if (dust >= 1e6*buyamount and energy >= 3*buyamount)
@@ -117,7 +117,7 @@ Buttons
 			end
 		end
 	*nebulabutton
-		name:Create Nebula (10 billion dust, 4 energy)
+		name:Create Nebula
 		text:Create Nebula ([1e10*buyamount] dust, [4*buyamount] energy)
 		on click:
 			if (dust >= 1e10*buyamount and energy >= 4*buyamount)
@@ -127,13 +127,23 @@ Buttons
 			end
 		end
 	*galaxybutton
-		name:Create Galaxy (1 quadrillion dust, 5 energy)
+		name:Create Galaxy
 		text:Create Galaxy ([1e15*buyamount] dust, [5*buyamount] energy)
 		on click:
 			if (dust >= 1e15*buyamount and energy >= 5*buyamount)
 				yield buyamount galaxy
 				lose 1e15*buyamount dust
 				lose 5*buyamount energy
+			end
+		end
+	*clusterbutton
+		name:Create Cluster
+		text:Create Cluster ([1e22*buyamount] dust, [6*buyamount] energy)
+		on click:
+			if (dust >= 1e22*buyamount and energy >= 6*buyamount)
+				yield buyamount cluster
+				lose 1e22*buyamount dust
+				lose 6*buyamount energy
 			end
 		end
 		
@@ -182,6 +192,11 @@ Resources
 		on tick:yield this nebula
 		desc:A huge formation of thousands and thousands of nebulae and stars.
 		tag:object
+	*cluster
+		name:Cluster
+		on tick:yield this galaxy
+		desc:A galaxy cluster gathers groups of galaxies and nebulae, eventually forming more material.
+		tag:object
 	*TEMPLATE
 		on tick:lose this
 		hidden
@@ -190,11 +205,6 @@ Resources
 	*mattercooldown
 
 Buildings
-	*cluster
-		name:Cluster
-		on tick:yield 1 galaxy
-		cost:1e22 dust, 6 energy
-		desc:A galaxy cluster gathers groups of galaxies and nebulae, eventually forming more material.
 	*supercluster
 		name:Supercluster
 		on tick:yield 1 cluster
