@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.38. Latest updates will be displayed soon.
+	desc:Version 0.1.0. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -12,7 +12,7 @@ Settings
 	background:https://blenderartists.org/uploads/default/original/4X/7/e/2/7e2d7bea4ac21388c4a96e1371f375c4ce00094b.jpg
 
 CSS
-	.objectbox
+	.widebox
 	{
 	    width: 100%;
 	}
@@ -42,7 +42,7 @@ Layout
 		names:hide
 	*generatorsbox
 		in:upgrades
-		contains:tag:generators
+		contains:tag:generator
 		header:Technology
 	*abilitiesbox
 		contains:tag:abilities
@@ -91,7 +91,7 @@ Buttons
 
 	*TEMPLATE
 		tag:objectbutton
-		class:objectbox
+		class:widebox
 		no tooltip
 	*asteroidbutton
 		name:Create Asteroid
@@ -271,35 +271,50 @@ Resources
 	*mattercooldown
 
 Upgrades
+	TEMPLATE
+		class:widebox
 	*generator1
 		name:Tiny Generator
 		desc:A tiny energy generator produces 1 energy per second.
 		on tick:yield 1 energy
 		owned
-		tag:essentials generators
+		tag:essentials generator
 	*generator2
 		name:Small Generator
 		desc:A small energy generator produces 2 energy per second.
 		on tick:yield 2 energy
 		cost:200 energy
-		tag:generators
+		tag:generator
 	*generator3
 		name:Standard Generator
 		desc:A standard energy generator produces 3 energy per second.
 		on tick:yield 3 energy
 		cost:800 energy
-		tag:generators
+		tag:generator
 	*generator4
 		name:Large Generator
 		desc:A large energy generator produces 4 energy per second.
 		on tick:yield 4 energy
 		cost:3200 energy
-		tag:generators
+		tag:generator
 	*generator5
 		name:Colossal Generator
 		desc:A colossal energy generator produces 5 energy per second.
 		on tick:yield 5 energy
 		cost:12800 energy
-		tag:generators
+		tag:generator
+	*empower
+		text:<#fcc603>Empower Generators</#>
+		desc:Overflow your generators with energy. Generator cost <b>x4</b>, but generator energy production <b>x3</b>. All generators execpt Tiny Generator will be <#ff0000>reset</#>.
+		req:have generator5
+		passive:
+			multiply yield of tag:generator by 3
+			multiply cost of tag:generator by 4
+		end
+		on earn:
+			lose tag:generator:notTag:essentials
+			lose this
+			yield empoweramount
+		end
 
 Achievements
