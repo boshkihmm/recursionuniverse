@@ -214,7 +214,7 @@ Resources
 		passive:multiply yield of dust by 1+(0.01*this)
 	*TEMPLATE
 		tag:object
-		class:objectbox
+		class:widebox
 	*asteroid
 		name:Asteroid
 		desc:A small rocky body that slowly generates more dust.
@@ -314,8 +314,8 @@ Upgrades
 		end
 		on earn:
 			lose tag:generator:notTag:essentials
-			lose this
 			yield empoweramount
 		end
+		tag:generator
 
 Achievements
