@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.1. Latest updates will be displayed soon.
+	desc:Version 0.1.2. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -202,6 +202,10 @@ Resources
 	*empoweramount
 		start with:1
 		on load:this is 1
+		passive:
+			multiply yield of tag:generator by pow(3,this)
+			multiply cost of tag:generator by pow(4,this)
+		end
 	*dust
 		name:Dust
 		desc:Cosmic dust can be used to make many different celestial objects, however more and more dust is needed to make larger things.
@@ -310,10 +314,6 @@ Upgrades
 		text:<#fcc603>Empower Generators</#>
 		desc:Overflow your generators with energy. Generator cost <b>x4</b>, but generator energy production <b>x3</b>. All generators execpt Tiny Generator will be <#ff0000>reset</#>.
 		req:have generator5
-		passive:
-			multiply yield of tag:generator by pow(3,empoweramount)
-			multiply cost of tag:generator by pow(4,empoweramount)
-		end
 		on earn:
 			lose tag:generator:notTag:essentials
 			yield empoweramount
