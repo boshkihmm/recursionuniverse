@@ -310,7 +310,7 @@ Upgrades
 		req:have generator5
 		passive:
 			multiply yield of tag:generator by pow(3,empoweramount)
-			multiply cost of tag:generator by pow(4,*empoweramount)
+			multiply cost of tag:generator by pow(4,empoweramount)
 		end
 		on earn:
 			lose tag:generator:notTag:essentials
