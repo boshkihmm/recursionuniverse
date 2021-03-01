@@ -271,7 +271,7 @@ Resources
 	*mattercooldown
 
 Upgrades
-	TEMPLATE
+	*TEMPLATE
 		class:widebox
 	*generator1
 		name:Tiny Generator
