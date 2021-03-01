@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.5. Latest updates will be displayed soon.
+	desc:Version 0.1.6. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -62,6 +62,7 @@ Buttons
 			yield pow(dust,0.4) exotic
 			lose tag:object
 			lose :Upgrades:notTag:essentials
+			lose empoweramount
 			dust is 25
 			energy is 0
 			:tag:cooldowns is 0
