@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.3. Latest updates will be displayed soon.
+	desc:Version 0.1.4. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -203,7 +203,7 @@ Resources
 		start with:1
 		on load:this is 1
 		passive:
-			multiply yield of tag:generator:not:empowertag by pow(3,this)
+			multiply yield of tag:generator:notTag:empowertag by pow(3,this)
 			multiply cost of tag:generator by pow(4,this)
 		end
 	*dust
@@ -282,31 +282,31 @@ Upgrades
 		class:widebox
 	*generator1
 		name:Tiny Generator
-		desc:A tiny energy generator produces 1 energy per second.
+		desc:A tiny energy generator produces 1 ([1*pow(3,this)]with empower) energy per second.
 		on tick:yield 1 energy
 		owned
 		tag:essentials generator
 	*generator2
 		name:Small Generator
-		desc:A small energy generator produces 2 energy per second.
+		desc:A small energy generator produces 2 ([2*pow(3,this)]with empower) energy per second.
 		on tick:yield 2 energy
 		cost:200 energy
 		tag:generator
 	*generator3
 		name:Standard Generator
-		desc:A standard energy generator produces 3 energy per second.
+		desc:A standard energy generator produces 3 ([3*pow(3,this)]with empower) energy per second.
 		on tick:yield 3 energy
 		cost:800 energy
 		tag:generator
 	*generator4
 		name:Large Generator
-		desc:A large energy generator produces 4 energy per second.
+		desc:A large energy generator produces 4 ([4*pow(3,this)]with empower) energy per second.
 		on tick:yield 4 energy
 		cost:3200 energy
 		tag:generator
 	*generator5
 		name:Colossal Generator
-		desc:A colossal energy generator produces 5 energy per second.
+		desc:A colossal energy generator produces 5 ([5*pow(3,this)]with empower) energy per second.
 		on tick:yield 5 energy
 		cost:12800 energy
 		tag:generator
