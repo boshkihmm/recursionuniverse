@@ -1,10 +1,10 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.0.36. Latest updates will be displayed soon.
+	desc:Version 0.0.37. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
-//*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount. *asteroid is the only building affected by bulk buy (other than buyamount changing the cost of all buildings)
+//*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
 
 Settings
 	building cost increase:100%
@@ -15,6 +15,11 @@ CSS
 	.objectbox
 	{
 	    width: 100%;
+	}
+	.wormholeglow
+	{
+	    color: blue;
+	    text-shadow: 0 0 10px blue;
 	}
 
 Layout
