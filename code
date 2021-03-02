@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.9. Latest updates will be displayed soon.
+	desc:Version 0.1.10. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -78,6 +78,7 @@ Buttons
 				convertcooldown is 3600
 			else
 				toast Your cooldown needs to be at 0!
+				yield 1 smh
 			end
 		end
 		passive:if (convertcooldown > 0) 
@@ -87,6 +88,8 @@ Buttons
 	*buydown
 		name:Buy x0.1
 		on click:if (buyamount > 2) buyamount is buyamount*0.1
+
+
 
 
 
@@ -196,6 +199,9 @@ Buttons
 		end
 		
 Resources
+	*smh
+		name:hmm
+		hidden
  	*buyamount
 		passive:multiply cost of :Buildings by this
 		on load:this is 1
@@ -317,8 +323,8 @@ Upgrades
 		tag:generator
 	*empower
 		name:Empower Generators
-		text:<#fcc603>Empower Generators (Level [empoweramount])</#>
-		desc:Overflow your generators with energy. Generator cost <b>x4</b>, but generator energy production <b>x3</b>. All generators execpt Tiny Generator will be <#ff0000>reset</#>, and empower level will be raised to [empoweramount+1].
+		text:<#fcc603>Empower Generators (Level [empoweramount+1])</#>
+		desc:Overflow your generators with energy. Generator cost <b>x4</b>, but generator energy production <b>x3</b>. All generators execpt Tiny Generator will be <#ff0000>reset</#>, and empower level will be raised from <b>[empoweramount]</b> to <b>[empoweramount+1]</b>.
 		req:have generator5
 		on earn:
 			lose tag:generator:notTag:essentials
@@ -327,30 +333,100 @@ Upgrades
 		tag:generator empowertag
 
 Achievements
-	*achievement1
+	*objectachieve1
 		name:Big rock
 		desc:Create an asteroid.
 		req:asteroid > 0
-	*achievement2
+	*objectachievement2
 		name:Bigger rock
 		desc:Create a Planet.
 		req:planet > 0
-	*achievement3
+		on earn:yield 1 graviton
+	*objectachieve3
 		name:Not a rock, but definitely big 
 		desc:Create a star.
 		req:star > 0
-	*achievement4
+		on earn:yield 1 graviton
+	*objectachieve4
 		name:Starry storm
 		desc:Create a nebula.
 		req:nebula > 0
-	*achievement5
+		on earn:yield 1 graviton
+	*objectachieve5
 		name:Recursion Galaxy
 		desc:Create a galaxy.
 		req:galaxy > 0
+		on earn:yield 1 graviton
+	*objectachieve6
+		name:Clusterphobic
+		desc:Create a cluster.
+		req:galaxy > 0
+		on earn:yield 2 graviton
+	*objectachieve7
+		name:Like a cluster, but a bit more super
+		desc:Create a supercluster.
+		req:supercluster > 0
+		on earn:yield 2 graviton
+	*objectachieve8
+		name:What is a filament
+		desc:Create a filament.
+		req:filament > 0
+		on earn:yield 2 graviton
+	*objectachieve9
+		name:Universal dusting
+		desc:Create a universe.
+		req:universe > 0
+		on earn:yield 2 graviton
+	*objectachieve10
+		name:Recursion Multiverse
+		desc:Create a multiverse.
+		req:multiverse > 0
+		on earn:yield 2 graviton
+	*generatorachieve1
+		name:Fuel power
+		desc:Create a small generator.
+		req:have generator2
+		on earn:yield 1 graviton
+	*generatorachieve2
+		name:Energetic ripple
+		desc:Create a standard generator.
+		req:have generator3
+		on earn:yield 1 graviton
+	*generatorachieve3
+		name:Energetic wave
+		desc:Create a large generator.
+		req:have generator4
+		on earn:yield 1 graviton
+	*generatorachieve4
+		name:Energetic burst
+		desc:Create a colossal generator.
+		req:have generator5
+		on earn:yield 1 graviton
+	*generatorachieve5
+		name:Empowered
+		desc:Empower your generators to level 1.
+		req:empoweramount = 1
+		on earn:yield 1 graviton
+	*generatorachieve6
+		name:Empower Tower
+		desc:Empower your generators to level 3.
+		req:empoweramount = 3
+		on earn:yield 2 graviton
+	*generatorachieve7
+		name:Empower Trip
+		desc:Empower your generators to level 5.
+		req:empoweramount = 5
+		on earn:yield 2 graviton
 	*secret1
-		name:Bulk Buyer
+		name:Bulk buyer
 		desc:That is completely unnecessary.
 		req:buyamount = 1e50
+		on earn:yield 1 graviton
+	*secret2
+		name:Cooldown hater
+		desc:You're really impatient, huh?
+		req:smh > 99
+		on earn:yield 1 graviton
 	
 		
 		
