@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.7. Latest updates will be displayed soon.
+	desc:Version 0.1.8. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -86,7 +86,7 @@ Buttons
 		on click:if (buyamount < 1e50) buyamount is buyamount*10
 	*buydown
 		name:Buy x0.1
-		on click:if (buyamount > 1) buyamount is buyamount*0.1
+		on click:if (buyamount > 2) buyamount is buyamount*0.1
 
 
 
@@ -198,6 +198,7 @@ Buttons
 Resources
  	*buyamount
 		passive:multiply cost of :Buildings by this
+		on load:this is 1
 	*empoweramount
 		passive:
 			multiply yield of tag:generator:notTag:empowertag by pow(3,this)
@@ -290,24 +291,28 @@ Upgrades
 		desc:A small energy generator produces 2 ([2*pow(3,this)]with empower) energy per second.
 		on tick:yield 2 energy
 		cost:200 energy
+		req:have generator1
 		tag:generator
 	*generator3
 		name:Standard Generator
 		desc:A standard energy generator produces 3 ([3*pow(3,this)]with empower) energy per second.
 		on tick:yield 3 energy
 		cost:800 energy
+		req:have generator2
 		tag:generator
 	*generator4
 		name:Large Generator
 		desc:A large energy generator produces 4 ([4*pow(3,this)]with empower) energy per second.
 		on tick:yield 4 energy
 		cost:3200 energy
+		req:have generator3
 		tag:generator
 	*generator5
 		name:Colossal Generator
 		desc:A colossal energy generator produces 5 ([5*pow(3,this)]with empower) energy per second.
 		on tick:yield 5 energy
 		cost:12800 energy
+		req:have generator4
 		tag:generator
 	*empower
 		name:Empower Generators
