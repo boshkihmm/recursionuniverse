@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.10. Latest updates will be displayed soon.
+	desc:Version 0.1.11. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -10,6 +10,8 @@ Settings
 	building cost increase:100%
 	building cost refund:0%
 	background:https://blenderartists.org/uploads/default/original/4X/7/e/2/7e2d7bea4ac21388c4a96e1371f375c4ce00094b.jpg
+	no particles
+	no bulk particles
 
 CSS
 	.widebox
