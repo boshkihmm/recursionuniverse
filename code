@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.6. Latest updates will be displayed soon.
+	desc:Version 0.1.7. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -83,7 +83,7 @@ Buttons
 		passive:if (convertcooldown > 0) 
 	*buyup
 		name:Buy x10
-		on click:if (buyamount < 1e10) buyamount is buyamount*10
+		on click:if (buyamount < 1e50) buyamount is buyamount*10
 	*buydown
 		name:Buy x0.1
 		on click:if (buyamount > 1) buyamount is buyamount*0.1
@@ -215,6 +215,8 @@ Resources
 		name:Exotic Matter
 		desc:Exotic matter obtained from converting normal matter is extremely valuable, boosting your dust earn by an additive 1%. It can also be used to activate special boosts. Dust mass is currently being boosted by x[1+(0.01*this)].
 		passive:multiply yield of dust by 1+(0.01*this)
+	*graviton
+		name:Graviton
 	*TEMPLATE
 		tag:object
 		class:widebox
@@ -319,3 +321,50 @@ Upgrades
 		tag:generator empowertag
 
 Achievements
+	*achievement1
+		name:Big rock
+		desc:Create an asteroid.
+		req:asteroid > 0
+	*achievement2
+		name:Bigger rock
+		desc:Create a Planet.
+		req:planet > 0
+	*achievement3
+		name:Not a rock, but definitely big 
+		desc:Create a star.
+		req:star > 0
+	*achievement4
+		name:Starry storm
+		desc:Create a nebula.
+		req:nebula > 0
+	*achievement5
+		name:Recursion Galaxy
+		desc:Create a galaxy.
+		req:galaxy > 0
+	*secret1
+		name:Bulk Buyer
+		desc:That is completely unnecessary.
+		req:buyamount = 1e50
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
