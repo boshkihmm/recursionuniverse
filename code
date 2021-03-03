@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.13. Latest updates will be displayed soon.
+	desc:Version 0.1.14. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -213,8 +213,10 @@ Resources
 	*smh
 		hidden
  	*buyamount
+		name:Buy Amount
 		passive:multiply cost of :Buildings by this
 		on load:this is 1
+		start with:1
 	*empoweramount
 		passive:
 			multiply yield of tag:generator:notTag:empowertag by pow(3,this)
