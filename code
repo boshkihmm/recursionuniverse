@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.14. Latest updates will be displayed soon.
+	desc:Version 0.1.15. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -16,14 +16,18 @@ Settings
 CSS
 	.widebox
 	{
-	    width: 100%;
+		width: 100%;
 	}
 	.wormholeglow
 	{
-	    color: blue;
-	    text-shadow: 0 0 8px blue;
-	    box-shadow: 0px 0px 10px blue;
-	    border: blue;
+		color: blue;
+		text-shadow: 0 0 5px blue;
+		box-shadow: 0px 0px 15px blue;
+		border: blue;
+	}
+	.numbersfont
+	{
+		font-family: "Lucida Console", "Courier New", monospace;
 	}
 
 Layout
@@ -106,7 +110,7 @@ Buttons
 
 	*TEMPLATE
 		tag:objectbutton
-		class:widebox
+		class:widebox numbersfont
 		no tooltip
 	*asteroidbutton
 		name:Create Asteroid
@@ -239,7 +243,7 @@ Resources
 		name:Graviton
 	*TEMPLATE
 		tag:object
-		class:widebox
+		class:widebox numbersfont
 	*asteroid
 		name:Asteroid
 		desc:A small rocky body that slowly generates more dust.
