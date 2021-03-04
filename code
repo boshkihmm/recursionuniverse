@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.17. Latest updates will be displayed soon.
+	desc:Version 0.1.18. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -301,34 +301,34 @@ Upgrades
 		class:widebox
 	*generator1
 		name:Tiny Generator
-		desc:A tiny energy generator produces 1 ([1*pow(3,this)]with empower) energy per second.
+		desc:A tiny energy generator produces 1 ([1*pow(3,empoweramount)] with empower) energy per second.
 		on tick:yield 1 energy
 		owned
 		tag:essentials generator
 	*generator2
 		name:Small Generator
-		desc:A small energy generator produces 2 ([2*pow(3,this)]with empower) energy per second.
+		desc:A small energy generator produces 2 ([2*pow(3,empoweramount)] with empower) energy per second.
 		on tick:yield 2 energy
 		cost:200 energy
 		req:have generator1
 		tag:generator
 	*generator3
 		name:Standard Generator
-		desc:A standard energy generator produces 3 ([3*pow(3,this)]with empower) energy per second.
+		desc:A standard energy generator produces 3 ([3*pow(3,empoweramount)] with empower) energy per second.
 		on tick:yield 3 energy
 		cost:800 energy
 		req:have generator2
 		tag:generator
 	*generator4
 		name:Large Generator
-		desc:A large energy generator produces 4 ([4*pow(3,this)]with empower) energy per second.
+		desc:A large energy generator produces 4 ([4*pow(3,empoweramount)] with empower) energy per second.
 		on tick:yield 4 energy
 		cost:3200 energy
 		req:have generator3
 		tag:generator
 	*generator5
 		name:Colossal Generator
-		desc:A colossal energy generator produces 5 ([5*pow(3,this)]with empower) energy per second.
+		desc:A colossal energy generator produces 5 ([5*pow(3,empoweramount)] with empower) energy per second.
 		on tick:yield 5 energy
 		cost:12800 energy
 		req:have generator4
@@ -447,7 +447,7 @@ Achievements
 	*secret2
 		name:Cooldown hater
 		desc:You're really impatient, huh?
-		req:smh > 99
+		req:smh > 24
 		on earn:yield 1 graviton
 	
 		
