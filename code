@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.16. Latest updates will be displayed soon.
+	desc:Version 0.1.17. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -84,7 +84,7 @@ Buttons
 		tag:abilities
 		on click:
 			if (convertcooldown = 0)
-				yield pow((exotic/10),0.15)*1000 energy
+				yield pow((exotic/10),0.1)*3000 energy
 				lose exotic/10 exotic
 				convertcooldown is 3600
 			else
@@ -425,10 +425,20 @@ Achievements
 		req:empoweramount = 3
 		on earn:yield 2 graviton
 	*generatorachieve7
-		name:Empower Trip
+		name:Empower trip
 		desc:Empower your generators to level 5.
 		req:empoweramount = 5
 		on earn:yield 2 graviton
+	*exoticachieve1
+		name:Exotic gains
+		desc:Obtain 1000 exotic matter.
+		req:exotic >= 1000
+		on earn:yield 2 graviton
+	*exoticachieve2
+		name:Exotic boost
+		desc:Obtain 1M exotic matter.
+		req:exotic >= 1e6
+		on earn:yield 1 graviton
 	*secret1
 		name:Bulk buyer
 		desc:That is completely unnecessary.
