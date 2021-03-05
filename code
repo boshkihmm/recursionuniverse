@@ -301,12 +301,11 @@ Resources
 	
 Buildings
 	*TEMPLATE
-		tag:exoticbuy
+		tag:exoticbuy	
 	*energytest
 		name:Upgrade Energy
-		passive:if (this = this-1) yield 1 this
-		on earn:yield asenergy
-		
+		passive:if (this < asenergy) yield 1 energytest
+		on earn:yield 1 asenergy
 Upgrades
 	*TEMPLATE
 		class:widebox
