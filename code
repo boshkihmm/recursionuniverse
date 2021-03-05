@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.18. Latest updates will be displayed soon.
+	desc:Version 0.1.19. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -420,7 +420,7 @@ Achievements
 		req:empoweramount = 1
 		on earn:yield 1 graviton
 	*generatorachieve6
-		name:Empower Tower
+		name:Empower tower
 		desc:Empower your generators to level 3.
 		req:empoweramount = 3
 		on earn:yield 2 graviton
@@ -429,6 +429,11 @@ Achievements
 		desc:Empower your generators to level 5.
 		req:empoweramount = 5
 		on earn:yield 2 graviton
+	*generatorachieve8
+		name:Overempowering
+		desc:Empower your generators to level 10.
+		req:empoweramount = 10
+		on earn:yield 3 graviton
 	*exoticachieve1
 		name:Exotic gains
 		desc:Obtain 1000 exotic matter.
