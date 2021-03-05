@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.19. Latest updates will be displayed soon.
+	desc:Version 0.1.20. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -53,7 +53,7 @@ Layout
 		header:Abilities
 		in:upgrades
 	*exoticbox
-		contains:tag:exoticupgrades
+		contains:tag:exoticbuy
 		in:upgrades
 		header:Exotic Upgrades
 		
@@ -295,7 +295,14 @@ Resources
 		tag:cooldowns
 	*convertcooldown
 	*mattercooldown
-
+	
+Buildings
+	*TEMPLATE
+		tag:exoticbuy
+	*energyup
+		name:Upgrade Energy
+		passive:if this = (this-1) yield this
+		
 Upgrades
 	*TEMPLATE
 		class:widebox
