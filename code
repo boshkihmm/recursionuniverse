@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.20. Latest updates will be displayed soon.
+	desc:Version 0.1.21. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -295,13 +295,17 @@ Resources
 		tag:cooldowns
 	*convertcooldown
 	*mattercooldown
+	*TEMPLATE
+		tag:as
+	*asenergy
 	
 Buildings
 	*TEMPLATE
 		tag:exoticbuy
-	*energyup
+	*energytest
 		name:Upgrade Energy
-		passive:if this = (this-1) yield this
+		passive:if (this = this-1) yield 1 this
+		on earn:yield asenergy
 		
 Upgrades
 	*TEMPLATE
