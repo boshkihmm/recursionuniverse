@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.27. Latest updates will be displayed soon.
+	desc:Version 0.1.28. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -80,7 +80,7 @@ Buttons
 		end
 	*wormhole2
 		name:Graviton Wormhole
-		desc:Use 10 gravitons to create a special wormhole where nothing is reset.
+		desc:Use 10 gravitons to create a special wormhole where nothing is reset.<//><b>Activating a wormhole will give you [pow((pow(dust,0.4)),0.97)/5] exotic matter.<b>
 		class:wormholeglow
 		passive:
 			if (wormhole:clicks = 0)
