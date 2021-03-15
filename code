@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.26. Latest updates will be displayed soon.
+	desc:Version 0.1.27. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -90,6 +90,7 @@ Buttons
 			end
 		end
 		on click:yield pow((pow(dust,0.4)),0.97)/5 exotic
+		on click:lose 10 graviton
 	*convertbutton
 		name:Convert Energy
 		desc:Use <#ff0000>10%</#> of your exotic matter, and convert it into energy. This ability has a 1 hour cooldown, and needs <b>[convertcooldown/60] minutes ([convertcooldown] seconds)</b> until it can be used again. Converting right now will give you <b>[pow((exotic/10),0.15)*1000]</b> energy.
