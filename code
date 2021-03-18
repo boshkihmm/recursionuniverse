@@ -264,7 +264,7 @@ Resources
 		on click:
 			if (exotic >= round((pow(2,pow(this,0.5))*5)*buyamount))
 				yield buyamount this
-				lose round((pow(2,pow(this,0.5))*5)*buyamount)) exotic
+				lose round((pow(2,pow(this,0.5))*5)*buyamount) exotic
 			end
 		end
 		passive:multiply yield of energy by ((pow(this,0.8)/25)+1)
