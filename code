@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.1.29. Latest updates will be displayed soon.
+	desc:Version 0.2.1. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -113,6 +113,7 @@ Buttons
 		name:Buy x0.1
 		on click:if (buyamount > 2) buyamount is buyamount*0.1
 
+	
 
 
 
@@ -244,12 +245,33 @@ Resources
 	*energy
 		name:Energy
 		desc:Energy is essential for making celestial bodies form from gravity power. This energy is often limited, and finding ways to speed up energy production is hard.
-	*exotic
+	*exotic|em
 		name:Exotic Matter
 		desc:Exotic matter obtained from converting normal matter is extremely valuable, boosting your dust earn by an additive 1%. It can also be used to activate special boosts. Dust mass is currently being boosted by x[1+(0.01*this)].
 		passive:multiply yield of dust by 1+(0.01*this)
 	*graviton
 		name:Graviton
+
+
+
+//COST FORMULA:round(((2,pow(this,0.5))*5)*buyamount)
+	*TEMPLATE
+		tag:exoticbuy
+		class:widebox
+	*energyup
+		name:Upgrade Energy
+		text:Energy (Level [this])
+		on click:
+			if (exotic >= round(((2,pow(this,0.5))*5)*buyamount))
+				yield buyamount this
+				lose round(((2,pow(this,0.5))*5)*buyamount) exotic
+			end
+		end
+		passive:multiply yield of energy by (pow(this,0.8)/25)+1
+	
+
+
+
 	*TEMPLATE
 		tag:object
 		class:widebox
