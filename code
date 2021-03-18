@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.2.2. Latest updates will be displayed soon.
+	desc:Version 0.2.3. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -254,7 +254,7 @@ Resources
 
 
 
-//COST FORMULA:round(((2,pow(this,0.5))*5)*buyamount)
+//COST FORMULA:round((pow(2,pow(this,0.5))*5)*buyamount)
 	*TEMPLATE
 		tag:exoticbuy
 		class:widebox
@@ -262,9 +262,9 @@ Resources
 		name:Upgrade Energy
 		text:Energy (Level [this])
 		on click:
-			if (exotic >= round(((2,pow(this,0.5))*5)*buyamount))
+			if (exotic >= round((pow(2,pow(this,0.5))*5)*buyamount))
 				yield buyamount this
-				lose round(((2,pow(this,0.5))*5)*buyamount) exotic
+				lose round((pow(2,pow(this,0.5))*5)*buyamount)) exotic
 			end
 		end
 		passive:multiply yield of energy by ((pow(this,0.8)/25)+1)
@@ -330,17 +330,7 @@ Resources
 		tag:cooldowns
 	*convertcooldown
 	*mattercooldown
-	*TEMPLATE
-		tag:as
-	*asenergy
 	
-Buildings
-	*TEMPLATE
-		tag:exoticbuy	
-	*energytest
-		name:Upgrade Energy
-		passive:if (this < asenergy) this is asenergy
-		on earn:if (this >= asenergy) asenergy is asenergy + 1
 Upgrades
 	*TEMPLATE
 		class:widebox
