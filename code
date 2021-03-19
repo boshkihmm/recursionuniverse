@@ -1,7 +1,7 @@
 Let's make a game!
 	name:Recursion Universe
 	by:boshki0987
-	desc:Version 0.2.4. Latest updates will be displayed soon.
+	desc:Version 0.2.3. Latest updates will be displayed soon.
 	created:1/6/2020
 	updated:2/13/2020
 //*buyup and *buydown are the buttons to change bulk buy amount, which is represented by *buyamount.
@@ -118,6 +118,7 @@ Buttons
 		on click:
 			if (respecconfirm > 0)
 				tag:exoticbuy is 0
+				lose 1e100 energyup
 				respecconfirm is 0
 			else
 				respecconfirm is 3
