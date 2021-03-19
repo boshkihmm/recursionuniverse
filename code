@@ -120,7 +120,7 @@ Buttons
 				tag:exoticbuy is 0
 				respecconfirm is 0
 			else
-				respscconfirm is 3
+				respecconfirm is 3
 			end
 		end
 
